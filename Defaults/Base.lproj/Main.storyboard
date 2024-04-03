@@ -73,6 +73,13 @@
                             <constraint firstItem="xzv-Nc-Oa5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMv-WN-Pnc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="ANj-sR-zI7" id="oOy-Oq-cVa"/>
+                        <outlet property="saveButton" destination="xzv-Nc-Oa5" id="FO9-3X-5St"/>
+                        <outlet property="segmentedControl" destination="2Zi-U8-bhu" id="a8I-hB-zM4"/>
+                        <outlet property="statusLabel" destination="ayS-2Q-7fD" id="wnj-UB-WYE"/>
+                        <outlet property="textField" destination="wVf-By-8FM" id="cQf-7C-aUF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
