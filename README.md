@@ -12,13 +12,14 @@ https://developer.apple.com/documentation/foundation/userdefaults
 ---------
 
 Difference between UserDefaults & @AppStorage
-----------
+---------
 - @AppStorage is suited for individual pieces of data like variables and constants.
 - If you had to store anything more complex (like a struct or a class, or a collection thereof), you're probably best service using UserDefaults.
 
-----------
+---------
 
 UIKit + Storyboard
+---------
 ````ruby
 import UIKit
 import SwiftUI
@@ -70,7 +71,7 @@ class ViewController: UIViewController {
     private let segmentIndex = "SegmentControlIndex"
 }
 ````
----------
+--------
 
 SwiftUI / UserDefaults
 --------
@@ -100,7 +101,7 @@ struct iExpense: View {
     iExpense()
 }
 ````
----------
+--------
 
 SwiftUI / @AppStorage
 --------
