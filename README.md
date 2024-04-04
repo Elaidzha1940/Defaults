@@ -20,7 +20,6 @@ Difference between UserDefaults & @AppStorage
 
 UIKit + Storyboard
 ````ruby
-
 import UIKit
 import SwiftUI
 
@@ -70,7 +69,6 @@ class ViewController: UIViewController {
     private let inputTextKey = "InputText"
     private let segmentIndex = "SegmentControlIndex"
 }
-
 ````
 ---------
 
@@ -87,6 +85,36 @@ struct iExpense: View {
             Button("Tap Count: \(tapCount)") {
                 tapCount += 1
                 UserDefaults.standard.set(tapCount, forKey: "Tap")
+            }
+            .font(.headline)
+            .bold()
+            .foregroundStyle(Color(.label))
+            .padding()
+            .background(Color.brown.gradient)
+            .cornerRadius(15)
+        }
+    }
+}
+
+#Preview {
+    iExpense()
+}
+````
+---------
+
+SwiftUI / @AppStorage
+--------
+
+````ruby
+import SwiftUI
+
+struct iExpense: View {
+    @AppStorage("tapCount") private var tapCount = 0
+    
+    var body: some View {
+        VStack {
+            Button("Tap Count: \(tapCount)") {
+                tapCount += 1
             }
             .font(.headline)
             .bold()
