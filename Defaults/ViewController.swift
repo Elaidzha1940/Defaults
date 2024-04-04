@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet private var saveButton: UIButton!
     @IBOutlet private var segmentedControl: UISegmentedControl!
     @IBOutlet private var deleteButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
