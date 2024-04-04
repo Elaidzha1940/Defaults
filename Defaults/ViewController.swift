@@ -8,6 +8,7 @@
 //  */
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
     
@@ -27,6 +28,18 @@ class ViewController: UIViewController {
         statusLabel.text = "Run App: \(UserDefaults.standard.integer(forKey: numberOfLaunchesKey))"
         textField.text =  UserDefaults.standard.string(forKey: inputTextKey)
         segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: segmentIndex)
+        
+        // MARK: SwiftUI
+        let swiftUIView = iExpense()
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        hostingController.didMove(toParent: self)
     }
     
     @objc func didTapSaveButton()   {
