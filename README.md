@@ -74,3 +74,34 @@ class ViewController: UIViewController {
 ````
 ---------
 
+SwiftUI / UserDefaults
+--------
+````ruby
+import SwiftUI
+
+struct iExpense: View {
+    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
+    
+    var body: some View {
+        VStack {
+            Button("Tap Count: \(tapCount)") {
+                tapCount += 1
+                UserDefaults.standard.set(tapCount, forKey: "Tap")
+            }
+            .font(.headline)
+            .bold()
+            .foregroundStyle(Color(.label))
+            .padding()
+            .background(Color.brown.gradient)
+            .cornerRadius(15)
+        }
+    }
+}
+
+#Preview {
+    iExpense()
+}
+````
+---------
+
+
