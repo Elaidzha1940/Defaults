@@ -20,6 +20,7 @@ Difference between UserDefaults & @AppStorage
 
 UIKit + Storyboard
 ````ruby
+
 import UIKit
 import SwiftUI
 
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet private var saveButton: UIButton!
     @IBOutlet private var segmentedControl: UISegmentedControl!
     @IBOutlet private var deleteButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
@@ -41,18 +42,6 @@ class ViewController: UIViewController {
         statusLabel.text = "Run App: \(UserDefaults.standard.integer(forKey: numberOfLaunchesKey))"
         textField.text =  UserDefaults.standard.string(forKey: inputTextKey)
         segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: segmentIndex)
-        
-        // MARK: SwiftUI
-        let swiftUIView = iExpense()
-        let hostingController = UIHostingController(rootView: swiftUIView)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        hostingController.didMove(toParent: self)
     }
     
     @objc func didTapSaveButton()   {
@@ -81,6 +70,7 @@ class ViewController: UIViewController {
     private let inputTextKey = "InputText"
     private let segmentIndex = "SegmentControlIndex"
 }
+
 ````
 ---------
 
