@@ -18,7 +18,7 @@ Difference between UserDefaults & @AppStorage
 
 ---------
 
-UIKit + Storyboard
+UIKit / Storyboard
 ---------
 ````ruby
 import UIKit
